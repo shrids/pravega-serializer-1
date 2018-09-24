@@ -1,15 +1,16 @@
 # Pravega Custom Serializers
 
-Pravega Client (ref: https://github.com/pravega/pravega) currently implements `io.pravega.client.stream.impl.JavaSerializer` and `io.pravega.client.stream.impl.ByteArraySerializer`. It does not suppport other forms of serialization or enable serializers to enable compression as implementing them as part of Pravega Client would lead to forcing unwanted dependencies on the user application. 
+Pravega Client (ref: https://github.com/pravega/pravega) currently implements the following serializers by default `io.pravega.client.stream.impl.JavaSerializer` and `io.pravega.client.stream.impl.ByteArraySerializer`. It does not support other forms of serialization or enable serializers to enable compressi
+as implementing them as part of Pravega Client would lead to forcing unwanted dependencies on the user application. 
 
-To solve this pravega-serializer repository creates different gradle build targets to generate specific artifacts for serializers which depend on external dependencies. These specialized Pravega serializers depend on on a specific type of serializer thereby ensuring no unwanted transitive dependencies are forced on the user application.
+To solve this pravega-serializer repository creates different gradle build targets to generate specific artifacts for serializers which depend on external dependencies. These specialized Pravega serializers depend on a specific type of serializer thereby ensuring no unwanted transitive dependencies are forced on the user application.
 
 ## Project Structure
 
 The project structure is described below.
 ```
 pravega-serializer
-   |---- json  (This supports Json based serializers)
+   |---- json (This supports Json based serializers)
    |---- avro 
    |---- customer serializers
 ```   
